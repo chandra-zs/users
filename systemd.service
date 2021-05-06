@@ -1,4 +1,6 @@
-User=root
+[Unit]
+Description=User Service
+[Service]
 ExecStart=java -jar /root/users/target/users-api-0.0.1.jar
 Environment=SERVER_PORT=8080
 SyslogIdentifier=users
