@@ -1,5 +1,5 @@
 @Library('todo') _
-todoshop (
+todo (
         COMPONENT             : 'users',
         PROJECT_NAME          : "todo",
         SLAVE_LABEL           : "JAVA",
