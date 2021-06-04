@@ -1,4 +1,4 @@
-@Library('todoshop') _
+@Library('todo') _
 todoshop (
         COMPONENT             : 'users',
         PROJECT_NAME          : "todo",
