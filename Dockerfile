@@ -7,5 +7,5 @@ COPY src src
 RUN mvn package
 
 FROM openjdk:8u171-jre-alpine
-COPY --from=maven target/SimpleJavaProject-*.jar ./SimpleJavaProject.jar
-CMD ["java", "-jar", "./SimpleJavaProject.jar"]
+COPY --from=maven /app/target/users-*.jar ./users.jar
+CMD ["java", "-jar", "users.jar"]
