@@ -1,11 +1,10 @@
-FROM maven:3.5.4-jdk-8-alpine as maven
+FROM maven:3.5.4-jdk-8-alpine as step1
 RUN mkdir -p /app/src
 WORKDIR /app
-COPY pom.xml /app/
 COPY src src
-#RUN mvn dependency:go-offline -B
+COPY pom.xml .
 RUN mvn package
 
 FROM openjdk:8u171-jre-alpine
-COPY --from=maven /app/target/users-*.jar ./users.jar
+COPY --from=step1 /app/target/users-*.jar ./users.jar
 CMD ["java", "-jar", "users.jar"]
